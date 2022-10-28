@@ -1,3 +1,34 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+  //필요하지 않은 lint 설정 disable
+  "rules": {
+    "react/react-in-jsx-scope": 0, //next js는 자동으로 React import 하므로 불필요
+    "react/prefer-stateless-function": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "no-nested-ternary": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "react/prop-types": 0
+  },
+  "globals": {
+    "React": "writable"
+  }
 }
