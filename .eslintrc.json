@@ -4,17 +4,25 @@
     "es2021": true,
     "node": true
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@next/next/recommended",
+    "prettier"
   ],
-  "parser": "babel-eslint",
+  "ignorePatterns": ["dist/", "node_modules/"],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 12,
+    "ecmaVersion": 2020,
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
@@ -26,7 +34,8 @@
     "react/jsx-one-expression-per-line": 0,
     "no-nested-ternary": 0,
     "@typescript-eslint/no-var-requires": 0,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "prettier/prettier": "error"
   },
   "globals": {
     "React": "writable"
