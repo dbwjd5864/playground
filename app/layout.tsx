@@ -10,14 +10,15 @@ export default function RootLayout({
   return (
     <html>
       <head></head>
-      <body><main>
-        <nav>
-        <Link href={'/'}>
-          Home</Link>
-          <Link href={'/notes'}>
-          Note</Link></nav>
+      <body>
+        <main>
+          <nav>
+            <Link href={'/'}>Home</Link>
+            <Link href={'/cats'}>Cats</Link>
+          </nav>
           {children}
-          </main></body>
+        </main>
+      </body>
     </html>
   );
 }
