@@ -1,7 +1,19 @@
 import { rest } from 'msw';
+import { LoginInfo, User } from './types';
 
 export const handlers = [
-  rest.get('https://example.com/products/:productId', (req, res, ctx) => {
-    console.log(req, res, ctx);
+  rest.post<User>('/login', (req, res, ctx) => {
+    console.log(req, res);
+    const { email } = req.body;
+    return res(
+      ctx.status(200),
+      ctx.json<LoginInfo>({
+        accessToken: '',
+        user: {
+          id: 1,
+          email,
+        },
+      })
+    );
   }),
 ];
