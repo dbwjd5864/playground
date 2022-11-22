@@ -3,7 +3,6 @@ import { LoginInfo, User } from './types';
 
 export const handlers = [
   rest.post<User>('/login', (req, res, ctx) => {
-    console.log(req, res);
     const { email } = req.body;
     return res(
       ctx.status(200),

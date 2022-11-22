@@ -3,25 +3,25 @@
 import React from 'react';
 
 const login = () => {
-  const handleLoginClick = () => {
-    fetch('/login', {
+  const handleLoginClick = async () => {
+    let response = await fetch(`/login`, {
       method: 'POST',
-      credentials: 'same-origin',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: 'test@example.com',
-        passwword: 'test',
+        email: 'test@email.com',
+        password: 'test',
       }),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+    });
+
+    response = await response.json();
+    console.log(response);
   };
 
   return (
     <div>
-      <button type="button" onClick={handleLoginClick}>
+      <button type="button" onClick={() => handleLoginClick}>
         로그인하기
       </button>
     </div>

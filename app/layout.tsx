@@ -1,4 +1,5 @@
 import './globals.css';
+import initMockAPI from '../mocks';
 
 export default function RootLayout({
   children,
@@ -6,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   if (process.env.NODE_ENV === 'development') {
-    require('../mocks');
+    initMockAPI();
   }
 
   return (
