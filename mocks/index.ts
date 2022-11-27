@@ -1,4 +1,4 @@
-const initMockAPI = async (): Promise<void> => {
+async function initMocks() {
   if (typeof window === 'undefined') {
     const { server } = await import('./server');
     server.listen();
@@ -6,6 +6,8 @@ const initMockAPI = async (): Promise<void> => {
     const { worker } = await import('./browser');
     worker.start();
   }
-};
+}
 
-export default initMockAPI;
+initMocks();
+
+export {};
