@@ -1,4 +1,4 @@
-interface IUserResponse {
+export interface UserResponse {
   stats: string;
   data: any;
 }
