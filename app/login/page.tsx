@@ -21,7 +21,7 @@ const login = () => {
 
   return (
     <div>
-      <button type="button" onClick={() => handleLoginClick}>
+      <button type="button" onClick={() => handleLoginClick()}>
         로그인하기
       </button>
     </div>
