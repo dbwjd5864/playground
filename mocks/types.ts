@@ -10,3 +10,11 @@ export type LoginInfo = {
     email: string;
   };
 };
+
+export type Todo = {
+  title: string;
+};
+
+export type TodosInfo = {
+  todos: string[];
+};
