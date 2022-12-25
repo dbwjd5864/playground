@@ -1,8 +1,14 @@
 import { NextPage } from 'next';
 import React from 'react';
 
-const page: NextPage = ({ params }: { params: { id: number } }) => {
+type TodoDeatilsPropsType = {
+  params: {
+    id: number;
+  };
+};
+
+const TodoDeatils: NextPage<TodoDeatilsPropsType> = ({ params }) => {
   return <div>{params.id}</div>;
 };
 
-export default page;
+export default TodoDeatils;
